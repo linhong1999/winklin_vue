@@ -28,7 +28,8 @@ export default {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@': resolve('src'),
-            '@doc': resolve('doc')
+            '@doc': resolve('doc'),
+            'jquery': 'jquery',
         }
     },
 
@@ -38,16 +39,16 @@ export default {
             /\/node_modules\/echarts\/dist\/echarts\.min\.js$/
         ],
         rules: [
-            {
-                test: /\.(js|vue)$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                include: [resolve('src'), resolve('test'), resolve('static')],
-                exclude: /node_modules/,
-                options: {
-                    formatter: friendlyFormatter
-                }
-            },
+            // {
+            //     test: /\.(js|vue)$/,
+            //     loader: 'eslint-loader',
+            //     enforce: 'pre',
+            //     include: [resolve('src'), resolve('test'), resolve('static')],
+            //     exclude: /node_modules/,
+            //     options: {
+            //         formatter: friendlyFormatter
+            //     }
+            // },
             {
                 test: /\.vue$/,
                 use: {
@@ -111,6 +112,10 @@ export default {
         new VueLoaderPlugin(),
         // moment 优化，只提取本地包
         new webpack.ContextReplacementPlugin(/moment\/locale$/, /zh-cn/),
+        new webpack.ProvidePlugin({
+            jQuery: "jquery",
+            $: "jquery"
+        }),
         new CopyWebpackPlugin([
             {
                 from: resolve('static/images'),

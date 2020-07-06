@@ -10,6 +10,9 @@
             <li>
                 <a href="javascript:void(0);" :class="$route.name === 'example3' ? 'bk-text-button' : ''" @click.stop="goPage('example3')">example3</a>
             </li>
+            <li>
+                <a href="javascript:void(0);" :class="$route.name === 'navbar' ? 'bk-text-button' : ''" @click.stop="goPage('navbar')">navbar</a>
+            </li>
         </ul>
         <main class="main-content" v-bkloading="{ isLoading: mainContentLoading, opacity: 1 }">
             <router-view :key="routerKey" v-show="!mainContentLoading" />
@@ -73,9 +76,9 @@
     @import './css/app.css';
 
     #app {
-        width: 800px;
+        width: 1200px;
         position: absolute;
-        left: 50%;
+        left: 36%;
         top: 10%;
         margin-left: -400px;
         font-size: 14px;

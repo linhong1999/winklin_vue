@@ -6,6 +6,10 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import jquery from 'jquery'
+import $ from 'jquery'
+import 'bootstrap3/dist/css/bootstrap.min.css'
+import 'bootstrap3/dist/js/bootstrap.min'
 
 // 全量引入
 // import './fully-import'
@@ -58,4 +62,6 @@ Vue.prototype.messageError = messageError
 Vue.prototype.messageSuccess = messageSuccess
 Vue.prototype.messageInfo = messageInfo
 Vue.prototype.messageWarn = messageWarn
+Vue.prototype.$ = jquery
+
 Vue.use(ElementUI)

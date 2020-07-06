@@ -2,7 +2,15 @@
     <div>
         <el-container>
             <el-header>Header</el-header>
-            <el-main>Main</el-main>
+            <el-main>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+                    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+                    <!-- Optional: clear the XS cols if their content doesn't match in height -->
+                    <div class="clearfix visible-xs-block"></div>
+                    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+                </div>
+            </el-main>
             <el-main>Main</el-main>
             <el-footer>Footer</el-footer>
         </el-container>
