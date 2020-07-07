@@ -2,22 +2,22 @@
     <div id="app" :class="systemCls">
         <ul class="header">
             <li>
-                <a href="javascript:void(0);" :class="$route.name === 'example1' ? 'bk-text-button' : ''" @click.stop="goPage('example1')">example1</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" :class="$route.name === 'example2' ? 'bk-text-button' : ''" @click.stop="goPage('example2')">example2</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" :class="$route.name === 'example3' ? 'bk-text-button' : ''" @click.stop="goPage('example3')">example3</a>
-            </li>
-            <li>
                 <a href="javascript:void(0);" :class="$route.name === 'navbar' ? 'bk-text-button' : ''" @click.stop="goPage('navbar')">navbar</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" :class="$route.name === 'detail' ? 'bk-text-button' : ''" @click.stop="goPage('detail')">host_detail</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" :class="$route.name === 'topo' ? 'bk-text-button' : ''" @click.stop="goPage('topo')">拓扑</a>
             </li>
         </ul>
         <main class="main-content" v-bkloading="{ isLoading: mainContentLoading, opacity: 1 }">
+            <el-header>Header</el-header>
             <router-view :key="routerKey" v-show="!mainContentLoading" />
         </main>
         <app-auth ref="bkAuth"></app-auth>
+        <el-footer>Footer</el-footer>
+
     </div>
 </template>
 <script>
@@ -77,12 +77,19 @@
 
     #app {
         width: 1200px;
+        height: 1400px;
         position: absolute;
         left: 36%;
         top: 10%;
         margin-left: -400px;
         font-size: 14px;
         color: #737987;
+    }
+    .el-header, .el-footer {
+        background-color: #B3C0D1;
+        color: #333;
+        text-align: center;
+        line-height: 60px;
     }
     .header {
         margin-bottom: 20px;

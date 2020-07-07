@@ -18,6 +18,8 @@ const Example2 = () => import(/* webpackChunkName: 'example2' */'@/views/example
 const Example3 = () => import(/* webpackChunkName: 'example3' */'@/views/example3')
 const NotFound = () => import(/* webpackChunkName: 'none' */'@/views/404')
 const NavBar = () => import(/* webpackChunkName: 'none' */'@/views/navbar')
+const Detail = () => import(/* webpackChunkName: 'none' */'@/views/host_detail')
+const Topo = () => import(/* webpackChunkName: 'none' */'@/views/topology')
 
 const routes = [
     {
@@ -46,6 +48,16 @@ const routes = [
                 path: 'navbar',
                 name: 'navbar',
                 component: NavBar
+            },
+            {
+                path: 'detail',
+                name: 'detail',
+                component: Detail
+            },
+            {
+                path: 'topo',
+                name: 'topo',
+                component: Topo
             }
         ]
     },
